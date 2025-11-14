@@ -5,6 +5,7 @@ import feel_gemini.screen.CatholicPanel;
 import feel_gemini.screen.ReadingPanel;
 import feel_gemini.screen.FlashCardPanel;
 import feel_gemini.screen.HomePanel;
+import feel_gemini.screen.SettingPanel;
 import javax.swing.JPanel;
 import java.awt.CardLayout;
 
@@ -15,6 +16,7 @@ public class MainFrame extends javax.swing.JFrame {
     private CatholicPanel catholicPanel; 
     private ReadingPanel readingPanel;
     private FlashCardPanel flashCardPanel;
+    private SettingPanel settingPanel; 
     
     public MainFrame() {
         initComponents();
@@ -30,6 +32,9 @@ public class MainFrame extends javax.swing.JFrame {
         
         flashCardPanel = new FlashCardPanel(this);
         mainPanel.add(flashCardPanel, "Flash Card");    
+        
+        settingPanel = new SettingPanel(this);
+        mainPanel.add(settingPanel, "Setting");   
     }
     
     public void showScreen(String screenName) {
@@ -57,7 +62,11 @@ public class MainFrame extends javax.swing.JFrame {
             mainPanel.remove(flashCardPanel);
             flashCardPanel = null;
             System.out.println("-> Flash Card đã bị đóng và giải phóng bộ nhớ.");
-        }     
+        } else if (screenName.equals("Setting") && settingPanel != null) {
+            mainPanel.remove(settingPanel);
+            settingPanel = null;
+            System.out.println("-> Setting đã bị đóng và giải phóng bộ nhớ.");
+        }         
         showScreen("Home"); 
         mainPanel.revalidate();
     }
@@ -83,6 +92,7 @@ public class MainFrame extends javax.swing.JFrame {
         if (screenName.equals("Catholic")) return catholicPanel;
         if (screenName.equals("Reading")) return readingPanel;
         if (screenName.equals("Flash Card")) return flashCardPanel;
+        if (screenName.equals("Setting")) return settingPanel;
         return null;
     }
     
@@ -97,6 +107,9 @@ public class MainFrame extends javax.swing.JFrame {
         } else if (screenName.equals("Flash Card")) {
             flashCardPanel = new FlashCardPanel(this);
             return flashCardPanel;
+        } else if (screenName.equals("Setting")) {
+            settingPanel = new SettingPanel(this);
+            return settingPanel;
         }
         return null;
     }

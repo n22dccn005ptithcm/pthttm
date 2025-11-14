@@ -4,17 +4,23 @@
  */
 package feel_gemini.screen;
 
+import feel_gemini.MainFrame;
+
 /**
  *
  * @author ad
  */
-public class SettingPane extends javax.swing.JPanel {
+public class SettingPanel extends javax.swing.JPanel {
 
-    /**
-     * Creates new form SettingPane
-     */
-    public SettingPane() {
+    private MainFrame mainFrame; 
+    
+    public SettingPanel() {
         initComponents();
+    }
+    
+    public SettingPanel(MainFrame aThis) {
+        this.mainFrame = aThis;   // nếu bạn có biến mainFrame, dùng để gọi lại MainFrame
+        initComponents();         // luôn cần để giao diện hiển thị
     }
 
     /**
@@ -26,7 +32,6 @@ public class SettingPane extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jSpinner1 = new javax.swing.JSpinner();
         jLabel_Setting = new javax.swing.JLabel();
         jButton_Backscreen_S = new javax.swing.JButton();
         jButton_Closescreen_S = new javax.swing.JButton();
@@ -34,8 +39,8 @@ public class SettingPane extends javax.swing.JPanel {
         jLabel_Size = new javax.swing.JLabel();
         jTextField_Size = new javax.swing.JTextField();
         jLabel_TypeReading = new javax.swing.JLabel();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jCheckBox2 = new javax.swing.JCheckBox();
+        jCheckBox_typevn = new javax.swing.JCheckBox();
+        jCheckBox_english = new javax.swing.JCheckBox();
 
         setMaximumSize(new java.awt.Dimension(400, 500));
         setMinimumSize(new java.awt.Dimension(400, 500));
@@ -77,12 +82,14 @@ public class SettingPane extends javax.swing.JPanel {
         jLabel_Size.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel_Size.setText("SIZE");
 
+        jTextField_Size.setMaximumSize(new java.awt.Dimension(64, 22));
+
         jLabel_TypeReading.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel_TypeReading.setText("TYPE");
 
-        jCheckBox1.setText("jCheckBox1");
+        jCheckBox_typevn.setText("Vietnamese");
 
-        jCheckBox2.setText("jCheckBox2");
+        jCheckBox_english.setText("English");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -101,13 +108,13 @@ public class SettingPane extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel_Size, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField_Size, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTextField_Size, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(18, 18, 18)
                         .addComponent(jLabel_TypeReading, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jCheckBox2)
-                            .addComponent(jCheckBox1))
+                            .addComponent(jCheckBox_english)
+                            .addComponent(jCheckBox_typevn))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -124,11 +131,11 @@ public class SettingPane extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel_Size, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField_Size, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField_Size, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel_TypeReading, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jCheckBox1))
+                    .addComponent(jCheckBox_typevn))
                 .addGap(18, 18, 18)
-                .addComponent(jCheckBox2)
+                .addComponent(jCheckBox_english)
                 .addContainerGap(357, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -142,20 +149,19 @@ public class SettingPane extends javax.swing.JPanel {
     private void jButton_Closescreen_SActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_Closescreen_SActionPerformed
         // TODO add your handling code here:
         // Gọi MainFrame để loại bỏ component và gán null.
-        mainFrame.closeScreen("Reading");
+        mainFrame.closeScreen("Setting");
     }//GEN-LAST:event_jButton_Closescreen_SActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton_Backscreen_S;
     private javax.swing.JButton jButton_Closescreen_S;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox2;
+    private javax.swing.JCheckBox jCheckBox_english;
+    private javax.swing.JCheckBox jCheckBox_typevn;
     private javax.swing.JLabel jLabel_Setting;
     private javax.swing.JLabel jLabel_Size;
     private javax.swing.JLabel jLabel_TypeReading;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JSpinner jSpinner1;
     private javax.swing.JTextField jTextField_Size;
     // End of variables declaration//GEN-END:variables
 }

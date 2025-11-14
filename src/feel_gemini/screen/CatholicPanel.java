@@ -41,7 +41,7 @@ public class CatholicPanel extends javax.swing.JPanel {
 
         jComboBox_ChooseBook.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        jLabel_ChooseChapter.setText("CHƯƠNG");
+        jLabel_ChooseChapter.setText("CHAPTER");
 
         jComboBox_ChooseChapter.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
@@ -76,7 +76,7 @@ public class CatholicPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel_ChooseBook.setText("SÁCH ");
+        jLabel_ChooseBook.setText("BOOK");
 
         jSeparator1.setForeground(new java.awt.Color(0, 51, 51));
         jSeparator1.setMaximumSize(new java.awt.Dimension(398, 5));

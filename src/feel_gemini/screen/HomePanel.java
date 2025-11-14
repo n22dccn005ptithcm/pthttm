@@ -129,6 +129,7 @@ public class HomePanel extends javax.swing.JPanel {
 
     private void jButton_SettingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_SettingActionPerformed
         // TODO add your handling code here:
+        mainFrame.requestScreen("Setting");
     }//GEN-LAST:event_jButton_SettingActionPerformed
 
 

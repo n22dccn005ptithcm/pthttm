@@ -126,7 +126,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel_ChooseChapter">
       <Properties>
-        <Property name="text" type="java.lang.String" value="CH&#x1af;&#x1a0;NG"/>
+        <Property name="text" type="java.lang.String" value="CHAPTER"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JComboBox" name="jComboBox_ChooseChapter">
@@ -213,7 +213,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel_ChooseBook">
       <Properties>
-        <Property name="text" type="java.lang.String" value="S&#xc1;CH "/>
+        <Property name="text" type="java.lang.String" value="BOOK"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JSeparator" name="jSeparator1">
